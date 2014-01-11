@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="spPhoneParse:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/spPhoneParse_jar</output-path>
+    <root id="archive" name="spPhoneParse.jar">
+      <element id="module-output" name="spPhoneParse" />
+    </root>
+  </artifact>
+</component>
