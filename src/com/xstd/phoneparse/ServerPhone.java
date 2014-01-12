@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileReader;
+import java.util.HashMap;
 import java.util.LinkedList;
 
 /**
@@ -37,7 +38,9 @@ public class ServerPhone {
         }
     }
 
-    public LinkedList<PhoneInfo> mData = new LinkedList<PhoneInfo>();
+    public LinkedList<PhoneInfo> phoneInfos = new LinkedList<PhoneInfo>();
+
+    public HashMap<String, PhoneInfo> phone_InfoMap = new HashMap<String, PhoneInfo>();
 
     public String mFileFullPath;
 
@@ -48,7 +51,7 @@ public class ServerPhone {
     }
 
     public int count() {
-        return mData.size();
+        return phoneInfos.size();
     }
 
     private void parse() {
@@ -60,7 +63,6 @@ public class ServerPhone {
         }
 
         try {
-
             FileReader fr = new FileReader(mFileFullPath);
             BufferedReader bufferedreader = new BufferedReader(fr);
             String line;
@@ -71,20 +73,26 @@ public class ServerPhone {
                     String[] dataSplitor = line.split(",");
                     if (dataSplitor == null) continue;
 
-                    char first = dataSplitor[1].charAt(0);
-                    if (first == '+' || (first >= '0' && first <= '9')) {
-                        PhoneInfo info = new PhoneInfo();
-                        info.time = dataSplitor[0];
-                        info.phone = dataSplitor[1];
-                        info.netType = Integer.valueOf(dataSplitor[2]);
-                        info.channel = dataSplitor[3];
-                        info.phoneType = dataSplitor[4];
-                        mData.add(info);
+//                    char first = dataSplitor[1].charAt(0);
+//                    if (first == '+' || (first >= '0' && first <= '9')) {
+                    PhoneInfo info = new PhoneInfo();
+                    info.time = dataSplitor[0];
+                    info.phone = dataSplitor[1];
+                    info.netType = Integer.valueOf(dataSplitor[2]);
+                    info.channel = dataSplitor[3];
+                    info.phoneType = dataSplitor[4];
 
-//                        System.out.println(info.toString());
-                    }
+                    phone_InfoMap.put(info.phone, info);
+
+//                    }
                 }
             }
+
+            for (PhoneInfo phoneInfo : phone_InfoMap.values()) {
+                phoneInfos.add(phoneInfo);
+//                System.out.println(phoneInfo.toString());
+            }
+
             fr.close();
         } catch (Exception e) {
             e.printStackTrace();
