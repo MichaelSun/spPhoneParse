@@ -359,13 +359,13 @@ public class Main {
             if (LOG_FULL_PATH != null) {
                 writeLog(LOG_FULL_PATH, new String(">>>>> 今日扣费手机地址 <<<<< : ".getBytes("utf-8")));
             }
-            dumpInfoWithTitleForMoney(new String(">>>>> 【移动】 <<<<< : ".getBytes("utf-8")), MONEY_INFO.get(cnmnet));
-            dumpInfoWithTitleForMoney(new String(">>>>> 【联通】 <<<<< : ".getBytes("utf-8")), MONEY_INFO.get(unicom));
-            dumpInfoWithTitleForMoney(new String(">>>>> 【电信】 <<<<< : ".getBytes("utf-8")), MONEY_INFO.get(dianxin));
+            int yidongCount = dumpInfoWithTitleForMoney(new String(">>>>> 【移动】 <<<<< : ".getBytes("utf-8")), MONEY_INFO.get(cnmnet));
+            int liantongCount = dumpInfoWithTitleForMoney(new String(">>>>> 【联通】 <<<<< : ".getBytes("utf-8")), MONEY_INFO.get(unicom));
+            int dianxinCount = dumpInfoWithTitleForMoney(new String(">>>>> 【电信】 <<<<< : ".getBytes("utf-8")), MONEY_INFO.get(dianxin));
 
-            dumpInfoWithTitle(new String(">>>>> 今日没找到通道的手机(能通过手机号找到地址的手机) 【移动】<<<<< : ".getBytes("utf-8")), NO_CHANNEL_HAS_LOCAL_INFO.get(cnmnet));
-            dumpInfoWithTitle(new String(">>>>> 今日没找到通道的手机(能通过手机号找到地址的手机) 【联通】<<<<< : ".getBytes("utf-8")), NO_CHANNEL_HAS_LOCAL_INFO.get(unicom));
-            dumpInfoWithTitle(new String(">>>>> 今日没找到通道的手机(能通过手机号找到地址的手机) 【电信】<<<<< : ".getBytes("utf-8")), NO_CHANNEL_HAS_LOCAL_INFO.get(dianxin));
+            int yidongNoCount = dumpInfoWithTitle(new String(">>>>> 今日没找到通道的手机(能通过手机号找到地址的手机) 【移动】<<<<< : ".getBytes("utf-8")), NO_CHANNEL_HAS_LOCAL_INFO.get(cnmnet));
+            int liantongNoCount = dumpInfoWithTitle(new String(">>>>> 今日没找到通道的手机(能通过手机号找到地址的手机) 【联通】<<<<< : ".getBytes("utf-8")), NO_CHANNEL_HAS_LOCAL_INFO.get(unicom));
+            int dianxinNoCount = dumpInfoWithTitle(new String(">>>>> 今日没找到通道的手机(能通过手机号找到地址的手机) 【电信】<<<<< : ".getBytes("utf-8")), NO_CHANNEL_HAS_LOCAL_INFO.get(dianxin));
 
             System.out.println(" ");
             System.out.println(" ");
@@ -397,6 +397,17 @@ public class Main {
             }
             System.out.println(" ");
             System.out.println(" ");
+            System.out.println(new String("【【汇总】】: ".getBytes("utf-8")));
+            System.out.println(new String("今日使用有效手机号码获取通道数量 : ".getBytes("utf-8")) + SERVER_PHONE.count());
+            System.out.println(" ");
+            System.out.println(new String("今日扣费手机数量【移动】 : ".getBytes("utf-8")) + yidongCount);
+            System.out.println(new String("今日扣费手机数量【联通】 : ".getBytes("utf-8")) + liantongCount);
+            System.out.println(new String("今日扣费手机数量【电信】 : ".getBytes("utf-8")) + dianxinCount);
+            System.out.println(" ");
+            System.out.println(new String("今日没找到通道的手机(能通过手机号找到地址的手机) 【移动】 : ".getBytes("utf-8")) + yidongNoCount);
+            System.out.println(new String("今日没找到通道的手机(能通过手机号找到地址的手机) 【联通】 : ".getBytes("utf-8")) + liantongNoCount);
+            System.out.println(new String("今日没找到通道的手机(能通过手机号找到地址的手机) 【电信】 : ".getBytes("utf-8")) + dianxinNoCount);
+            System.out.println(" ");
             System.out.println(new String("没找到通道的手机数量".getBytes("utf-8")) + " : " + noChannelCount);
             System.out.println(new String("通过手机号没找到地址的数量".getBytes("utf-8")) + " : " + no_local_map_phone_number);
             System.out.println(new String("今天不扣费的数量".getBytes("utf-8")) + " : " + donotCount);
@@ -404,6 +415,17 @@ public class Main {
 
             if (LOG_FULL_PATH != null) {
                 writeLog(LOG_FULL_PATH, " ");
+                writeLog(LOG_FULL_PATH, " ");
+                writeLog(LOG_FULL_PATH, new String("【【汇总】】: ".getBytes("utf-8")));
+                writeLog(LOG_FULL_PATH, new String("今日使用有效手机号码获取通道数量 : ".getBytes("utf-8")) + SERVER_PHONE.count());
+                writeLog(LOG_FULL_PATH, " ");
+                writeLog(LOG_FULL_PATH, new String("今日扣费手机数量【移动】 : ".getBytes("utf-8")) + yidongCount);
+                writeLog(LOG_FULL_PATH, new String("今日扣费手机数量【联通】 : ".getBytes("utf-8")) + liantongCount);
+                writeLog(LOG_FULL_PATH, new String("今日扣费手机数量【电信】 : ".getBytes("utf-8")) + dianxinCount);
+                writeLog(LOG_FULL_PATH, " ");
+                writeLog(LOG_FULL_PATH, new String("今日没找到通道的手机(能通过手机号找到地址的手机) 【移动】 : ".getBytes("utf-8")) + yidongNoCount);
+                writeLog(LOG_FULL_PATH, new String("今日没找到通道的手机(能通过手机号找到地址的手机) 【联通】 : ".getBytes("utf-8")) + liantongNoCount);
+                writeLog(LOG_FULL_PATH, new String("今日没找到通道的手机(能通过手机号找到地址的手机) 【电信】 : ".getBytes("utf-8")) + dianxinNoCount);
                 writeLog(LOG_FULL_PATH, " ");
                 writeLog(LOG_FULL_PATH, new String("没找到通道的手机数量".getBytes("utf-8")) + " : " + noChannelCount);
                 writeLog(LOG_FULL_PATH, new String("通过手机号没找到地址的数量".getBytes("utf-8")) + " : " + no_local_map_phone_number);

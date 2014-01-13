@@ -6,6 +6,7 @@ import java.io.FileInputStream;
 import java.io.FileReader;
 import java.util.HashMap;
 import java.util.LinkedList;
+import java.util.regex.Pattern;
 
 /**
  * Created by michael on 14-1-10.
@@ -47,23 +48,30 @@ public class ServerPhone {
     public ServerPhone(String fileFullPath) {
         mFileFullPath = fileFullPath;
 
-        parse();
+        String[] paths = mFileFullPath.split(":");
+        for (String path : paths) {
+            parse(path);
+        }
+
+        for (PhoneInfo phoneInfo : phone_InfoMap.values()) {
+            phoneInfos.add(phoneInfo);
+        }
     }
 
     public int count() {
         return phoneInfos.size();
     }
 
-    private void parse() {
-        if (mFileFullPath == null) return;
+    private void parse(String fileFullPath) {
+        if (fileFullPath == null) return;
 
-        File src = new File(mFileFullPath);
+        File src = new File(fileFullPath);
         if (!src.exists()) {
             new IllegalArgumentException("解析文件不存在");
         }
 
         try {
-            FileReader fr = new FileReader(mFileFullPath);
+            FileReader fr = new FileReader(fileFullPath);
             BufferedReader bufferedreader = new BufferedReader(fr);
             String line;
             while ((line = bufferedreader.readLine()) != null) {
@@ -73,8 +81,11 @@ public class ServerPhone {
                     String[] dataSplitor = line.split(",");
                     if (dataSplitor == null) continue;
 
-//                    char first = dataSplitor[1].charAt(0);
-//                    if (first == '+' || (first >= '0' && first <= '9')) {
+                    if (!isNumeric(dataSplitor[2])) {
+                        System.out.println("Find error NetType : " + dataSplitor[2] + " for phone : " + dataSplitor[1]);
+                        continue;
+                    }
+
                     PhoneInfo info = new PhoneInfo();
                     info.time = dataSplitor[0];
                     info.phone = dataSplitor[1];
@@ -88,15 +99,15 @@ public class ServerPhone {
                 }
             }
 
-            for (PhoneInfo phoneInfo : phone_InfoMap.values()) {
-                phoneInfos.add(phoneInfo);
-//                System.out.println(phoneInfo.toString());
-            }
-
             fr.close();
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    public boolean isNumeric(String str){
+        Pattern pattern = Pattern.compile("[0-9]*");
+        return pattern.matcher(str).matches();
     }
 
 }
