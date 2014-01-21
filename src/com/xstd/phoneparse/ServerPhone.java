@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileReader;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.regex.Pattern;
@@ -42,6 +43,8 @@ public class ServerPhone {
     public LinkedList<PhoneInfo> phoneInfos = new LinkedList<PhoneInfo>();
 
     public HashMap<String, PhoneInfo> phone_InfoMap = new HashMap<String, PhoneInfo>();
+
+    public ArrayList<String> errorLine = new ArrayList<String>();
 
     public String mFileFullPath;
 
@@ -82,7 +85,8 @@ public class ServerPhone {
                     if (dataSplitor == null) continue;
 
                     if (!isNumeric(dataSplitor[2])) {
-                        System.out.println("Find error NetType : " + dataSplitor[2] + " for phone : " + dataSplitor[1]);
+//                        System.out.println("Find error NetType : " + dataSplitor[2] + " for phone : " + dataSplitor[1]);
+                        errorLine.add(line);
                         continue;
                     }
 
@@ -94,8 +98,6 @@ public class ServerPhone {
                     info.phoneType = dataSplitor[4];
 
                     phone_InfoMap.put(info.phone, info);
-
-//                    }
                 }
             }
 

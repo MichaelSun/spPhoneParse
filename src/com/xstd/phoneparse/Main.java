@@ -1,5 +1,9 @@
 package com.xstd.phoneparse;
 
+import com.xstd.chart.BarChartUtils;
+import com.xstd.chart.PieChartUtils;
+import sun.awt.image.ImageWatched;
+
 import java.io.*;
 import java.util.*;
 
@@ -27,8 +31,17 @@ public class Main {
         public String str;
     }
 
+    public static final class LocalPhoneInfo {
+
+        public String local;
+
+        public int count;
+
+        public LinkedList<ServerPhone.PhoneInfo> phoneList = new LinkedList<ServerPhone.PhoneInfo>();
+    }
+
     private static HashMap<String, HashMap<String, MoneyInfo>> MONEY_INFO = new HashMap<String, HashMap<String, MoneyInfo>>();
-    private static HashMap<String, HashMap<String, Integer>> NO_CHANNEL_HAS_LOCAL_INFO = new HashMap<String, HashMap<String, Integer>>();
+    private static HashMap<String, HashMap<String, LocalPhoneInfo>> NO_CHANNEL_HAS_LOCAL_INFO = new HashMap<String, HashMap<String, LocalPhoneInfo>>();
 
     private static HashMap<String, Integer> CHANNEL_SUCCESS_COUNT = new HashMap<String, Integer>();
 
@@ -43,28 +56,22 @@ public class Main {
 
     private static HashMap<String, String> plugin_log = new HashMap<String, String>();
 
-    private static String LOG_FULL_PATH = null;
+    private static String LOG_DIR_PATH = null;
+
+    private static String LOG_REPORT_FULL_PATH = null;
+
+    private static String LOG_ERROR_FULL_PATH = null;
+
+    private static String PROPERTY_FILE = null;
 
     private static int dumpInfoWithTitleForMoney(String title, HashMap<String, MoneyInfo> data) {
         try {
-
-            System.out.println(" ");
-            System.out.println(" ");
-            System.out.println(" ");
-            System.out.println(" ");
-            if (LOG_FULL_PATH != null) {
-                writeLog(LOG_FULL_PATH, " ");
-                writeLog(LOG_FULL_PATH, " ");
-                writeLog(LOG_FULL_PATH, " ");
-                writeLog(LOG_FULL_PATH, " ");
-            }
+            Utils.log(" ", LOG_REPORT_FULL_PATH);
+            Utils.log(" ", LOG_REPORT_FULL_PATH);
 
             int count = 0;
             if (data == null || data.size() == 0) {
-                System.out.println(new String(title + 0 + new String("个".getBytes("utf-8"))));
-                if (LOG_FULL_PATH != null) {
-                    writeLog(LOG_FULL_PATH, new String(title + 0 + new String("个".getBytes("utf-8"))));
-                }
+                Utils.log(new String(title + 0 + new String("个".getBytes("utf-8"))), LOG_REPORT_FULL_PATH);
                 return 0;
             }
             LinkedList<MoneyInfo> dumpInfo = new LinkedList<MoneyInfo>();
@@ -88,18 +95,13 @@ public class Main {
                 }
             });
 
-            System.out.println(new String(title + count + new String("个".getBytes("utf-8"))));
-            if (LOG_FULL_PATH != null) {
-                writeLog(LOG_FULL_PATH, new String(title + count + new String("个".getBytes("utf-8"))));
-            }
+            Utils.log(new String(title + count + new String("个".getBytes("utf-8"))), LOG_REPORT_FULL_PATH);
             for (MoneyInfo moneyInfo : dumpInfo) {
                 String log = moneyInfo.local + " : " + moneyInfo.count
                                  + new String(" 使用的扣费通道 : ".getBytes("utf-8"))
                                  + moneyInfo.channelSet.toString();
-                System.out.println(log);
-                if (LOG_FULL_PATH != null) {
-                    writeLog(LOG_FULL_PATH, log);
-                }
+
+                Utils.log(log, LOG_REPORT_FULL_PATH);
             }
 
             return count;
@@ -110,33 +112,23 @@ public class Main {
         return 0;
     }
 
-    private static int dumpInfoWithTitle(String title, HashMap<String, Integer> data) {
+    private static int dumpInfoWithTitle(String title, HashMap<String, LocalPhoneInfo> data) {
         try {
-
-            System.out.println(" ");
-            System.out.println(" ");
-            System.out.println(" ");
-            System.out.println(" ");
-            if (LOG_FULL_PATH != null) {
-                writeLog(LOG_FULL_PATH, " ");
-                writeLog(LOG_FULL_PATH, " ");
-                writeLog(LOG_FULL_PATH, " ");
-                writeLog(LOG_FULL_PATH, " ");
-            }
+            Utils.log(" ", LOG_REPORT_FULL_PATH);
+            Utils.log(" ", LOG_REPORT_FULL_PATH);
+            Utils.log(" ", LOG_REPORT_FULL_PATH);
+            Utils.log(" ", LOG_REPORT_FULL_PATH);
 
             int count = 0;
             if (data == null || data.size() == 0) {
-                System.out.println(new String(title + 0 + new String("个".getBytes("utf-8"))));
-                if (LOG_FULL_PATH != null) {
-                    writeLog(LOG_FULL_PATH, new String(title + 0 + new String("个".getBytes("utf-8"))));
-                }
+                Utils.log(new String(title + 0 + new String("个".getBytes("utf-8"))), LOG_REPORT_FULL_PATH);
                 return 0;
             }
 
             LinkedList<CountObject> dumpList = new LinkedList<CountObject>();
             for (String local : data.keySet()) {
                 CountObject obj = new CountObject();
-                obj.count = data.get(local);
+                obj.count = data.get(local).count;
                 obj.str = local;
                 dumpList.add(obj);
                 count += obj.count;
@@ -155,16 +147,10 @@ public class Main {
                 }
             });
 
-            System.out.println(new String(title + count + new String("个".getBytes("utf-8"))));
-            if (LOG_FULL_PATH != null) {
-                writeLog(LOG_FULL_PATH, new String(title + count + new String("个".getBytes("utf-8"))));
-            }
+            Utils.log(new String(title + count + new String("个".getBytes("utf-8"))), LOG_REPORT_FULL_PATH);
             for (CountObject obj : dumpList) {
                 String log = obj.str + " : " + obj.count;
-                System.out.println(log);
-                if (LOG_FULL_PATH != null) {
-                    writeLog(LOG_FULL_PATH, log);
-                }
+                Utils.log(log, LOG_REPORT_FULL_PATH);
             }
 
             return count;
@@ -175,23 +161,6 @@ public class Main {
         return 0;
     }
 
-    public static void writeLog(String file, String conent) {
-        BufferedWriter out = null;
-        try {
-            out = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(file, true)));
-            out.write(conent);
-            out.write("\n");
-        } catch (Exception e) {
-            e.printStackTrace();
-        } finally {
-            try {
-                out.close();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
-    }
-
     public static void main(String[] args) {
         try {
             String no_channel = new String("无通道".getBytes("utf-8"));
@@ -200,6 +169,12 @@ public class Main {
             String unicom = new String("【联通】".getBytes("utf-8"));
             String dianxin = new String("【电信】".getBytes("utf-8"));
 
+            String cnmnetColum = new String("移动".getBytes("utf-8"));
+            String unicomColum = new String("联通".getBytes("utf-8"));
+            String dianxinColum = new String("电信".getBytes("utf-8"));
+
+            String day = Utils.formatTime(System.currentTimeMillis());
+
             //debug
             String beijing_local = new String("北京".getBytes("utf-8"));
 
@@ -207,7 +182,6 @@ public class Main {
             //解析参数
             for (int index = 0; index < args.length; index++) {
                 System.out.println(args[index]);
-
                 if (args[index].equals(ServerPhone.SERVER_PHONE_KEY)) {
                     SERVER_PHONE = new ServerPhone(args[index + 1]);
                 } else if (args[index].equals(PhoneMap.PHONE_MAP_KEY)) {
@@ -215,13 +189,27 @@ public class Main {
                 } else if (args[index].equals(NO_LOCAL_FILE_KEY)) {
                     OUT_PAHT = args[index + 1];
                 } else if (args[index].equals("--log")) {
-                    LOG_FULL_PATH = args[index + 1];
+                    LOG_DIR_PATH = args[index + 1];
+                    File file = new File(LOG_DIR_PATH);
+                    if (!file.exists()) {
+                        file.mkdirs();
+                    }
+                    LOG_REPORT_FULL_PATH = LOG_DIR_PATH + "/log_" + day + ".txt";
+                    LOG_ERROR_FULL_PATH = LOG_DIR_PATH + "/error_" + day + ".txt";
+                } else if (args[index].equals(PropertyFileAyalysis.KEY_PROPERTY_FILE)) {
+                    PROPERTY_FILE = args[index + 1];
                 }
             }
 
-            if (LOG_FULL_PATH != null) {
-                File file = new File(LOG_FULL_PATH);
-                file.delete();
+            //如果是处理property的话，直接处理property，然后返回
+            if (PROPERTY_FILE != null) {
+                PropertyFileAyalysis ayalysis = new PropertyFileAyalysis(PROPERTY_FILE);
+                if (OUT_PAHT != null) {
+                    ayalysis.dumpToFile(OUT_PAHT);
+                }
+
+                System.out.println(new String("分析文件 : ".getBytes("utf-8")) + PROPERTY_FILE + " dump to : " + OUT_PAHT);
+                return;
             }
 
             //通过手机号没找到地址的数量
@@ -270,15 +258,10 @@ public class Main {
                             moneyInfo.channelSet.add(info.channel);
 
                             map.put(local, moneyInfo);
-//                            if (local.contains(beijing_local)) {
-//                                System.out.println("find Beijng : " + moneyInfo.count + " : " + local);
-//                            }
-
                             today_do_money++;
                         } else if (info.channel.equals(no_channel)) {
                             //无通道的，原因是因为没有配置通道
                             String local = localList.get(phonePrefix);
-                            HashMap<String, Integer> map = null;
                             String key = null;
                             switch (info.netType) {
                                 case 1:
@@ -291,18 +274,22 @@ public class Main {
                                     key = dianxin;
                                     break;
                             }
-                            map = NO_CHANNEL_HAS_LOCAL_INFO.get(key);
+                            HashMap<String, LocalPhoneInfo> map = NO_CHANNEL_HAS_LOCAL_INFO.get(key);
                             if (map == null) {
-                                map = new HashMap<String, Integer>();
+                                map = new HashMap<String, LocalPhoneInfo>();
                                 NO_CHANNEL_HAS_LOCAL_INFO.put(key, map);
                             }
 
-                            int count = 0;
+                            LocalPhoneInfo localPhoneInfo = null;
                             if (map.containsKey(local)) {
-                                count = map.get(local);
+                                localPhoneInfo = map.get(local);
+                            } else {
+                                localPhoneInfo = new LocalPhoneInfo();
+                                localPhoneInfo.local = local;
                             }
-                            count++;
-                            map.put(local, count);
+                            localPhoneInfo.count++;
+                            localPhoneInfo.phoneList.add(info);
+                            map.put(local, localPhoneInfo);
                         }
                     } else {
                         //没发现手机映射的
@@ -337,28 +324,28 @@ public class Main {
                         }
                         count++;
                         CHANNEL_SUCCESS_COUNT.put(info.channel, count);
-
-//                        if (info.channel.contains(beijing_local)) {
-//                            System.out.println("find Beijng Channel : " + count + " : " + info.channel + " : " + localList.get(phonePrefix) + " : " + phonePrefix);
-//                        }
                     }
                 }
             }
 
-//            System.out.println(MONEY_INFO.toString());
 
+            if (LOG_REPORT_FULL_PATH != null) {
+                File file = new File(LOG_REPORT_FULL_PATH);
+                file.delete();
+            }
+            if (LOG_ERROR_FULL_PATH != null) {
+                File file = new File(LOG_ERROR_FULL_PATH);
+                file.delete();
+            }
+
+            Utils.log("[[ " + day + new String(" 数据报表 ]]".getBytes("utf-8")), LOG_REPORT_FULL_PATH);
             if (SERVER_PHONE != null) {
-                String log = new String(">>>>> 今日使用手机号码获取通道数量 <<<<< : ".getBytes("utf-8")) + SERVER_PHONE.count();
-                System.out.println(log);
-                if (LOG_FULL_PATH != null) {
-                    writeLog(LOG_FULL_PATH, log);
-                }
+                Utils.log(new String(">>>>> 今日使用手机号码获取通道数量 <<<<< : ".getBytes("utf-8")) + SERVER_PHONE.count(), LOG_REPORT_FULL_PATH);
+                Utils.log(" ", LOG_REPORT_FULL_PATH);
+                Utils.log(" ", LOG_REPORT_FULL_PATH);
             }
 
-            System.out.println(new String(">>>>> 今日扣费手机地址 <<<<< : ".getBytes("utf-8")));
-            if (LOG_FULL_PATH != null) {
-                writeLog(LOG_FULL_PATH, new String(">>>>> 今日扣费手机地址 <<<<< : ".getBytes("utf-8")));
-            }
+            Utils.log(new String(">>>>> 今日扣费手机地址 <<<<< : ".getBytes("utf-8")), LOG_REPORT_FULL_PATH);
             int yidongCount = dumpInfoWithTitleForMoney(new String(">>>>> 【移动】 <<<<< : ".getBytes("utf-8")), MONEY_INFO.get(cnmnet));
             int liantongCount = dumpInfoWithTitleForMoney(new String(">>>>> 【联通】 <<<<< : ".getBytes("utf-8")), MONEY_INFO.get(unicom));
             int dianxinCount = dumpInfoWithTitleForMoney(new String(">>>>> 【电信】 <<<<< : ".getBytes("utf-8")), MONEY_INFO.get(dianxin));
@@ -367,16 +354,10 @@ public class Main {
             int liantongNoCount = dumpInfoWithTitle(new String(">>>>> 今日没找到通道的手机(能通过手机号找到地址的手机) 【联通】<<<<< : ".getBytes("utf-8")), NO_CHANNEL_HAS_LOCAL_INFO.get(unicom));
             int dianxinNoCount = dumpInfoWithTitle(new String(">>>>> 今日没找到通道的手机(能通过手机号找到地址的手机) 【电信】<<<<< : ".getBytes("utf-8")), NO_CHANNEL_HAS_LOCAL_INFO.get(dianxin));
 
-            System.out.println(" ");
-            System.out.println(" ");
-            System.out.println(" ");
-            System.out.println(" ");
-            if (LOG_FULL_PATH != null) {
-                writeLog(LOG_FULL_PATH, " ");
-                writeLog(LOG_FULL_PATH, " ");
-                writeLog(LOG_FULL_PATH, " ");
-                writeLog(LOG_FULL_PATH, " ");
-            }
+            Utils.log(" ", LOG_REPORT_FULL_PATH);
+            Utils.log(" ", LOG_REPORT_FULL_PATH);
+            Utils.log(" ", LOG_REPORT_FULL_PATH);
+            Utils.log(" ", LOG_REPORT_FULL_PATH);
             int noChannelCount = CHANNEL_SUCCESS_COUNT.get(NO_CHANNEL_KEY) != null ? CHANNEL_SUCCESS_COUNT.get(NO_CHANNEL_KEY) : 0;
             int donotCount = CHANNEL_SUCCESS_COUNT.get(NO_DO_MONEY) != null ? CHANNEL_SUCCESS_COUNT.get(NO_DO_MONEY) : 0;
             CHANNEL_SUCCESS_COUNT.remove(NO_CHANNEL_KEY);
@@ -388,67 +369,124 @@ public class Main {
                 channelCount += CHANNEL_SUCCESS_COUNT.get(local);
             }
 
-            System.out.println(new String(">>>>>> 扣费通道信息 <<<<< : ".getBytes("utf-8")) + channelCount + new String("次".getBytes("utf-8")));
-            if (LOG_FULL_PATH != null) {
-                writeLog(LOG_FULL_PATH, new String(">>>>>> 扣费通道信息 <<<<< : ".getBytes("utf-8")) + channelCount + new String("次".getBytes("utf-8")));
-            }
+            Utils.log(new String(">>>>>> 扣费通道信息 <<<<< : ".getBytes("utf-8")) + channelCount + new String("次".getBytes("utf-8")), LOG_REPORT_FULL_PATH);
             for (Integer count : dumpInfo1.keySet()) {
-                System.out.println(dumpInfo1.get(count) + " : " + count);
+                Utils.log(dumpInfo1.get(count) + " : " + count, LOG_REPORT_FULL_PATH);
             }
-            System.out.println(" ");
-            System.out.println(" ");
-            System.out.println(new String("【【汇总】】: ".getBytes("utf-8")));
-            System.out.println(new String("今日使用有效手机号码获取通道数量 : ".getBytes("utf-8")) + SERVER_PHONE.count());
-            System.out.println(" ");
-            System.out.println(new String("今日扣费手机数量【移动】 : ".getBytes("utf-8")) + yidongCount);
-            System.out.println(new String("今日扣费手机数量【联通】 : ".getBytes("utf-8")) + liantongCount);
-            System.out.println(new String("今日扣费手机数量【电信】 : ".getBytes("utf-8")) + dianxinCount);
-            System.out.println(" ");
-            System.out.println(new String("今日没找到通道的手机(能通过手机号找到地址的手机) 【移动】 : ".getBytes("utf-8")) + yidongNoCount);
-            System.out.println(new String("今日没找到通道的手机(能通过手机号找到地址的手机) 【联通】 : ".getBytes("utf-8")) + liantongNoCount);
-            System.out.println(new String("今日没找到通道的手机(能通过手机号找到地址的手机) 【电信】 : ".getBytes("utf-8")) + dianxinNoCount);
-            System.out.println(" ");
-            System.out.println(new String("没找到通道的手机数量".getBytes("utf-8")) + " : " + noChannelCount);
-            System.out.println(new String("通过手机号没找到地址的数量".getBytes("utf-8")) + " : " + no_local_map_phone_number);
-            System.out.println(new String("今天不扣费的数量".getBytes("utf-8")) + " : " + donotCount);
-            System.out.println(new String("今日扣费数量".getBytes("utf-8")) + " : " + channelCount);
+            Utils.log(" ", LOG_REPORT_FULL_PATH);
+            Utils.log(" ", LOG_REPORT_FULL_PATH);
+            Utils.log(new String("【【汇总】】: ".getBytes("utf-8")), LOG_REPORT_FULL_PATH);
+            Utils.log(new String("今日使用有效手机号码获取通道数量 : ".getBytes("utf-8")) + SERVER_PHONE.count(), LOG_REPORT_FULL_PATH);
+            Utils.log(" ", LOG_REPORT_FULL_PATH);
+            Utils.log(new String("今日扣费手机数量【移动】 : ".getBytes("utf-8")) + yidongCount, LOG_REPORT_FULL_PATH);
+            Utils.log(new String("今日扣费手机数量【联通】 : ".getBytes("utf-8")) + liantongCount, LOG_REPORT_FULL_PATH);
+            Utils.log(new String("今日扣费手机数量【电信】 : ".getBytes("utf-8")) + dianxinCount, LOG_REPORT_FULL_PATH);
+            Utils.log(" ", LOG_REPORT_FULL_PATH);
+            Utils.log(new String("今日没找到通道的手机(能通过手机号找到地址的手机) 【移动】 : ".getBytes("utf-8")) + yidongNoCount, LOG_REPORT_FULL_PATH);
+            Utils.log(new String("今日没找到通道的手机(能通过手机号找到地址的手机) 【联通】 : ".getBytes("utf-8")) + liantongNoCount, LOG_REPORT_FULL_PATH);
+            Utils.log(new String("今日没找到通道的手机(能通过手机号找到地址的手机) 【电信】 : ".getBytes("utf-8")) + dianxinNoCount, LOG_REPORT_FULL_PATH);
+            Utils.log(" ", LOG_REPORT_FULL_PATH);
+            Utils.log(new String("没找到通道的手机数量".getBytes("utf-8")) + " : " + noChannelCount, LOG_REPORT_FULL_PATH);
+            Utils.log(new String("通过手机号没找到地址的数量".getBytes("utf-8")) + " : " + no_local_map_phone_number, LOG_REPORT_FULL_PATH);
+            Utils.log(new String("今天不扣费的数量".getBytes("utf-8")) + " : " + donotCount, LOG_REPORT_FULL_PATH);
+            Utils.log(new String("今日扣费数量".getBytes("utf-8")) + " : " + channelCount, LOG_REPORT_FULL_PATH);
 
-            if (LOG_FULL_PATH != null) {
-                writeLog(LOG_FULL_PATH, " ");
-                writeLog(LOG_FULL_PATH, " ");
-                writeLog(LOG_FULL_PATH, new String("【【汇总】】: ".getBytes("utf-8")));
-                writeLog(LOG_FULL_PATH, new String("今日使用有效手机号码获取通道数量 : ".getBytes("utf-8")) + SERVER_PHONE.count());
-                writeLog(LOG_FULL_PATH, " ");
-                writeLog(LOG_FULL_PATH, new String("今日扣费手机数量【移动】 : ".getBytes("utf-8")) + yidongCount);
-                writeLog(LOG_FULL_PATH, new String("今日扣费手机数量【联通】 : ".getBytes("utf-8")) + liantongCount);
-                writeLog(LOG_FULL_PATH, new String("今日扣费手机数量【电信】 : ".getBytes("utf-8")) + dianxinCount);
-                writeLog(LOG_FULL_PATH, " ");
-                writeLog(LOG_FULL_PATH, new String("今日没找到通道的手机(能通过手机号找到地址的手机) 【移动】 : ".getBytes("utf-8")) + yidongNoCount);
-                writeLog(LOG_FULL_PATH, new String("今日没找到通道的手机(能通过手机号找到地址的手机) 【联通】 : ".getBytes("utf-8")) + liantongNoCount);
-                writeLog(LOG_FULL_PATH, new String("今日没找到通道的手机(能通过手机号找到地址的手机) 【电信】 : ".getBytes("utf-8")) + dianxinNoCount);
-                writeLog(LOG_FULL_PATH, " ");
-                writeLog(LOG_FULL_PATH, new String("没找到通道的手机数量".getBytes("utf-8")) + " : " + noChannelCount);
-                writeLog(LOG_FULL_PATH, new String("通过手机号没找到地址的数量".getBytes("utf-8")) + " : " + no_local_map_phone_number);
-                writeLog(LOG_FULL_PATH, new String("今天不扣费的数量".getBytes("utf-8")) + " : " + donotCount);
-                writeLog(LOG_FULL_PATH, new String("今日扣费数量".getBytes("utf-8")) + " : " + channelCount);
+
+            //dump错误信息
+            Utils.log("[[ " + day + new String(" 错误数据报表 ]]".getBytes("utf-8")), LOG_ERROR_FULL_PATH);
+            Utils.log(" ", LOG_ERROR_FULL_PATH);
+            Utils.log(" ", LOG_ERROR_FULL_PATH);
+            Utils.dumpErrorLineForServerPhone(SERVER_PHONE.errorLine, LOG_ERROR_FULL_PATH);
+            Utils.dumpNoChannelFroServerPhone(new String("【移动】".getBytes("utf-8")), NO_CHANNEL_HAS_LOCAL_INFO.get(cnmnet), LOG_ERROR_FULL_PATH);
+            Utils.dumpNoChannelFroServerPhone(new String("【联通】".getBytes("utf-8")), NO_CHANNEL_HAS_LOCAL_INFO.get(unicom), LOG_ERROR_FULL_PATH);
+            Utils.dumpNoChannelFroServerPhone(new String("【电信】".getBytes("utf-8")), NO_CHANNEL_HAS_LOCAL_INFO.get(dianxin), LOG_ERROR_FULL_PATH);
+
+            //制作扣费通道图表
+            ArrayList<Map.Entry<String, Integer>> list = new ArrayList<Map.Entry<String, Integer>>();
+            list.addAll(CHANNEL_SUCCESS_COUNT.entrySet());
+            Collections.sort(list, new Comparator<Map.Entry<String, Integer>>() {
+                @Override
+                public int compare(Map.Entry<String, Integer> stringIntegerEntry, Map.Entry<String, Integer> stringIntegerEntry2) {
+                    return stringIntegerEntry2.getValue() - stringIntegerEntry.getValue();
+                }
+            });
+
+            HashMap<String, Integer> data = new HashMap<String, Integer>();
+            int channelSuccessCount = 0;
+            for (Map.Entry<String, Integer> obj : list) {
+                data.put(obj.getKey(), obj.getValue());
+                channelSuccessCount += obj.getValue();
             }
+            PieChartUtils.buildChar(LOG_DIR_PATH + new String("/扣费通道信息.png".getBytes("utf-8"))
+                                       , new String("扣费通道信息 (共".getBytes("utf-8")) + channelSuccessCount + ")"
+                                       , data);
+            //制作扣费地图图表
+            HashMap<String, HashMap<String, Integer>> chartData = new HashMap<String, HashMap<String, Integer>>();
+            HashMap<String, MoneyInfo> yidongLocalInfos = MONEY_INFO.get(cnmnet);
+            if (yidongLocalInfos != null) {
+                for (String local : yidongLocalInfos.keySet()) {
+                    HashMap<String, Integer> charDataValue = chartData.get(local);
+                    if (charDataValue == null) {
+                        charDataValue = new HashMap<String, Integer>();
+                        chartData.put(local, charDataValue);
+                    }
+                    MoneyInfo monkeyInfo = yidongLocalInfos.get(local);
+                    charDataValue.put(cnmnetColum, monkeyInfo.count);
+                }
+            }
+            HashMap<String, MoneyInfo> liantongLocalInfos = MONEY_INFO.get(unicom);
+            if (liantongLocalInfos != null) {
+                for (String local : liantongLocalInfos.keySet()) {
+                    HashMap<String, Integer> charDataValue = chartData.get(local);
+                    if (charDataValue == null) {
+                        charDataValue = new HashMap<String, Integer>();
+                        chartData.put(local, charDataValue);
+                    }
+                    MoneyInfo monkeyInfo = liantongLocalInfos.get(local);
+                    charDataValue.put(unicomColum, monkeyInfo.count);
+                }
+            }
+            HashMap<String, MoneyInfo> dianxinLocalInfos = MONEY_INFO.get(dianxin);
+            if (dianxinLocalInfos != null) {
+                for (String local : dianxinLocalInfos.keySet()) {
+                    HashMap<String, Integer> charDataValue = chartData.get(local);
+                    if (charDataValue == null) {
+                        charDataValue = new HashMap<String, Integer>();
+                        chartData.put(local, charDataValue);
+                    }
+                    MoneyInfo monkeyInfo = dianxinLocalInfos.get(local);
+                    charDataValue.put(dianxinColum, monkeyInfo.count);
+                }
+            }
+            //covert to list
+            List<BarChartUtils.BarChartObject> chartDataList = new LinkedList<BarChartUtils.BarChartObject>();
+            for (String local : chartData.keySet()) {
+                for (String op : chartData.get(local).keySet()) {
+                    BarChartUtils.BarChartObject barChartObject = new BarChartUtils.BarChartObject();
+                    barChartObject.colum = local;
+                    barChartObject.row = op;
+                    barChartObject.value = chartData.get(local).get(op);
+                    chartDataList.add(barChartObject);
+                }
+            }
+            Collections.sort(chartDataList, new Comparator<BarChartUtils.BarChartObject>() {
+                @Override
+                public int compare(BarChartUtils.BarChartObject barChartObject, BarChartUtils.BarChartObject barChartObject2) {
+                    if (barChartObject.value > barChartObject2.value) {
+                        return -1;
+                    } else if (barChartObject.value < barChartObject2.value) {
+                        return 1;
+                    }
 
-//            for (String key : plugin_log.keySet()) {
-//                System.out.println(key + " : " + plugin_log.get(key));
-//            }
+                    return 0;
+                }
+            });
 
-//            if (OUT_PAHT == null) return;
-//            File out = new File(OUT_PAHT);
-//            try {
-//                FileWriter writer = new FileWriter(out);
-//                for (String phone : NO_LOCAL_PHONE_NUMBER) {
-//                    writer.write(phone);
-//                    writer.write("\n");
-//                }
-//                writer.close();
-//            } catch (Exception e) {
-//                e.printStackTrace();
-//            }
+            BarChartUtils.buildChar(LOG_DIR_PATH + new String("/扣费通道地址.png".getBytes("utf-8")),
+                                       new String("今日扣费手机地址".getBytes("utf-8")),
+                                       new String("地址".getBytes("utf-8")),
+                                       new String("数量".getBytes("utf-8")),
+                                       chartDataList);
         } catch (Exception e) {
             e.printStackTrace();
         }

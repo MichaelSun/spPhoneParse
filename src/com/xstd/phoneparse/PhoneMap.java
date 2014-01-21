@@ -59,8 +59,6 @@ public class PhoneMap {
                     String[] dataSplitor = line.split("=");
                     if (dataSplitor == null) continue;
                     mData.put(dataSplitor[0], dataSplitor[1]);
-
-//                    System.out.println(phoneLocal.toString());
                 }
             }
             fr.close();
