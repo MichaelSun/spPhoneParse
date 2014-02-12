@@ -2,9 +2,8 @@ package com.xstd.phoneparse;
 
 import com.xstd.chart.BarChartUtils;
 import com.xstd.chart.PieChartUtils;
-import sun.awt.image.ImageWatched;
 
-import java.io.*;
+import java.io.File;
 import java.util.*;
 
 public class Main {
@@ -63,6 +62,8 @@ public class Main {
     private static String LOG_ERROR_FULL_PATH = null;
 
     private static String PROPERTY_FILE = null;
+
+    private static boolean IF_MAIL = false;
 
     private static int dumpInfoWithTitleForMoney(String title, HashMap<String, MoneyInfo> data) {
         try {
@@ -178,6 +179,7 @@ public class Main {
             //debug
             String beijing_local = new String("北京".getBytes("utf-8"));
 
+            boolean justDumpLocalMap = false;
 
             //解析参数
             for (int index = 0; index < args.length; index++) {
@@ -198,6 +200,10 @@ public class Main {
                     LOG_ERROR_FULL_PATH = LOG_DIR_PATH + "/error_" + day + ".txt";
                 } else if (args[index].equals(PropertyFileAyalysis.KEY_PROPERTY_FILE)) {
                     PROPERTY_FILE = args[index + 1];
+                } else if (args[index].equals("--mail")) {
+                    IF_MAIL = true;
+                } else if (args[index].equals(PHONE_MAP.PHOME_MAP_DUMP_KEY)) {
+                    justDumpLocalMap = true;
                 }
             }
 
@@ -209,6 +215,12 @@ public class Main {
                 }
 
                 System.out.println(new String("分析文件 : ".getBytes("utf-8")) + PROPERTY_FILE + " dump to : " + OUT_PAHT);
+                return;
+            }
+
+            //只做local分析
+            if (justDumpLocalMap) {
+                PHONE_MAP.dumpCityLocalMap(null);
                 return;
             }
 
@@ -487,6 +499,11 @@ public class Main {
                                        new String("地址".getBytes("utf-8")),
                                        new String("数量".getBytes("utf-8")),
                                        chartDataList);
+
+            //test mail
+            if (IF_MAIL) {
+                Utils.sendMail(LOG_DIR_PATH);
+            }
         } catch (Exception e) {
             e.printStackTrace();
         }

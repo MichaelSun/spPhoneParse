@@ -1,9 +1,8 @@
 package com.xstd.phoneparse;
 
-import java.io.BufferedWriter;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.OutputStreamWriter;
+import com.xstd.mail.Mail;
+
+import java.io.*;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -18,6 +17,35 @@ public class Utils {
     public static String formatTime(long time) {
         SimpleDateFormat dateFormat = new SimpleDateFormat(DEBUG_DATE_FORMAT);
         return dateFormat.format(time);
+    }
+
+    public static void sendMail(String attachPath) {
+        File attchFile = new File(attachPath);
+        String[] filenameList = attchFile.list(new FilenameFilter() {
+            @Override
+            public boolean accept(File file, String s) {
+                if (s.startsWith(".")) {
+                    return false;
+                }
+
+                return true;
+            }
+        });
+
+        long curTime = System.currentTimeMillis();
+        long yestoday = curTime - ((long) 24) * 60 * 60 * 1000;
+        String time = formatTime(yestoday);
+
+        ArrayList<String> toList = new ArrayList<String>();
+        toList.add("buaalx@qq.com");
+        toList.add("duheng1225@163.com");
+        toList.add("michael.s.china@gmail.com");
+
+        Mail mail = new Mail();
+        for (String filename : filenameList) {
+            mail.addAttachfile(attachPath + "/" + filename);
+        }
+        mail.send();
     }
 
     public static int dumpNoChannelFroServerPhone(String title, HashMap<String, Main.LocalPhoneInfo> map, String logfile) {

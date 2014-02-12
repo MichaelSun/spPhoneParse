@@ -1,9 +1,6 @@
 package com.xstd.chart;
 
-import org.jfree.chart.ChartFactory;
-import org.jfree.chart.ChartFrame;
-import org.jfree.chart.ChartUtilities;
-import org.jfree.chart.JFreeChart;
+import org.jfree.chart.*;
 import org.jfree.chart.labels.StandardPieSectionLabelGenerator;
 import org.jfree.chart.plot.PiePlot;
 import org.jfree.chart.title.TextTitle;
@@ -13,8 +10,10 @@ import org.jfree.util.Rotation;
 import org.jfree.util.SortOrder;
 
 import java.awt.*;
+import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
 import java.util.HashMap;
@@ -46,18 +45,28 @@ public class PieChartUtils {
      * @return
      */
     public static JFreeChart createChart(String title, PieDataset dataset) {
+//        StandardChartTheme chartTheme = new StandardChartTheme("unicode");
+//        //设置标题字体
+//        chartTheme.setExtraLargeFont(new Font("Monaco", Font.PLAIN, 20));
+//        //设置轴向字体
+//        chartTheme.setLargeFont(new Font("Monaco", Font.PLAIN, 15));
+//        //设置图例字体
+//        chartTheme.setRegularFont(new Font("Monaco", Font.PLAIN, 15));
+////        应用主题样式
+//        ChartFactory.setChartTheme(chartTheme);
+
         JFreeChart chart = ChartFactory.createPieChart(title, // 图表标题
-                                                       dataset, // 数据集
-                                                       true, // 是否显示图例
-                                                       true, // 是否显示工具提示
-                                                       true // 是否生成URL
+                                                          dataset, // 数据集
+                                                          true, // 是否显示图例
+                                                          true, // 是否显示工具提示
+                                                          true // 是否生成URL
         );
 
         //设置标题字体==为了防止中文乱码：必须设置字体
-//        chart.setTitle(new TextTitle(title, new Font("黑体", Font.ITALIC, 22)));
-        chart.setTitle(new TextTitle(title));
+//        chart.setTitle(new TextTitle(title, new Font("Monaco", Font.PLAIN, 22)));
+//        chart.setTitle(new TextTitle(title));
         //设置图例的字体==为了防止中文乱码：必须设置字体
-        chart.getLegend().setItemFont(new Font("黑体", Font.BOLD, 18));
+//        chart.getLegend().setItemFont(new Font("黑体", Font.BOLD, 18));
         // 获取饼图的Plot对象(实际图表)
         PiePlot plot = (PiePlot) chart.getPlot();
         //图形边框颜色
@@ -97,18 +106,6 @@ public class PieChartUtils {
     }
 
     /**
-     * step3: 输出图表到Swing Frame
-     *
-     * @param chart
-     */
-    public static void drawToFrame(JFreeChart chart) {
-        //输出图表到Swing Frame
-        ChartFrame frame = new ChartFrame("原创图书销量统计", chart);
-        frame.pack();
-        frame.setVisible(true);
-    }
-
-    /**
      * step3: 输出图表到指定的磁盘
      *
      * @param destPath
@@ -135,18 +132,43 @@ public class PieChartUtils {
         }
     }
 
+//    private static void loadFont() {
+//        try {
+//            InputStream is = new FileInputStream("/Users/michael/Documents/font/ms_yahei.ttf");
+//            java.awt.Font customFont = java.awt.Font.createFont(java.awt.Font.TRUETYPE_FONT, is);
+//            customFont = customFont.deriveFont(20f);
+//
+//            StandardChartTheme chartTheme = new StandardChartTheme("unicode");
+//            //设置标题字体
+//            chartTheme.setExtraLargeFont(customFont);
+//            //设置轴向字体
+//            chartTheme.setLargeFont(customFont);
+//            //设置图例字体
+//            chartTheme.setRegularFont(customFont);
+////        应用主题样式
+//            ChartFactory.setChartTheme(chartTheme);
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
+//    }
+
     public static void buildChar(String charFullPath, String title, HashMap<String, Integer> data) {
-        // step1:创建数据集对象
-        PieDataset dataset = createDataSet(data);
+        try {
+            // step1:创建数据集对象
+            PieDataset dataset = createDataSet(data);
+//            loadFont();
 
-        // step2:创建图表
-        JFreeChart chart = createChart(title, dataset);
+            // step2:创建图表
+            JFreeChart chart = createChart(title, dataset);
 
-        // step3: 输出图表到Swing窗口
-        //drawToFrame(chart);
+            // step3: 输出图表到Swing窗口
+            //drawToFrame(chart);
 
-        // step3: 输出图表到磁盘
-        drawToOutputStream(charFullPath, chart);
+            // step3: 输出图表到磁盘
+            drawToOutputStream(charFullPath, chart);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
 }

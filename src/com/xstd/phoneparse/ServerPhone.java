@@ -2,7 +2,6 @@ package com.xstd.phoneparse;
 
 import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -84,7 +83,11 @@ public class ServerPhone {
                     String[] dataSplitor = line.split(",");
                     if (dataSplitor == null) continue;
 
-                    if (!isNumeric(dataSplitor[2])) {
+                    if (!isNumeric(dataSplitor[2])
+                            || dataSplitor[2] == null
+                            || dataSplitor[2].length() == 0
+                            || dataSplitor[1] == null
+                            || dataSplitor[1].length() < 7) {
 //                        System.out.println("Find error NetType : " + dataSplitor[2] + " for phone : " + dataSplitor[1]);
                         errorLine.add(line);
                         continue;
