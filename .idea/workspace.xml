@@ -8,6 +8,8 @@
   <component name="ChangeListManager">
     <list default="true" id="3c025d06-0087-432e-8e8c-5b9ee690b95a" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/xstd/phoneparse/Utils.java" afterPath="$PROJECT_DIR$/src/com/xstd/phoneparse/Utils.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/copyright/profiles_settings.xml" afterPath="$PROJECT_DIR$/.idea/copyright/profiles_settings.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="spPhoneParse.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -25,7 +27,7 @@
     <disable_hints />
   </component>
   <component name="DebuggerManager">
-    <breakpoint_any default_suspend_policy="SuspendAll" default_condition_enabled="true">
+    <breakpoint_any default_suspend_policy="SuspendAll" default_condition_enabled="true" converted="true">
       <breakpoint>
         <option name="NOTIFY_CAUGHT" value="true" />
         <option name="NOTIFY_UNCAUGHT" value="true" />
@@ -61,9 +63,9 @@
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
     </breakpoint_any>
-    <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
-    <breakpoint_rules />
-    <ui_properties />
+    <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" converted="true" />
+    <breakpoint_rules converted="true" />
+    <ui_properties converted="true" />
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FavoritesManager">
@@ -74,7 +76,8 @@
       <file leaf-file-name="Main.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/xstd/phoneparse/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="504" column="29" selection-start="23839" selection-end="23839" vertical-scroll-proportion="0.0" vertical-offset="7465" max-vertical-offset="8208">
+            <state vertical-scroll-proportion="0.0" vertical-offset="8064" max-vertical-offset="8272">
+              <caret line="504" column="29" selection-start-line="504" selection-start-column="29" selection-end-line="504" selection-end-column="29" />
               <folding />
             </state>
           </provider>
@@ -83,7 +86,8 @@
       <file leaf-file-name="String.class" pinned="false" current="false" current-in-tab="false">
         <entry file="jar:///System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/classes.jar!/java/lang/String.class">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="204" column="0" selection-start="7977" selection-end="7977" vertical-scroll-proportion="0.0" vertical-offset="3264" max-vertical-offset="3360">
+            <state vertical-scroll-proportion="0.0" vertical-offset="3264" max-vertical-offset="3360">
+              <caret line="204" column="0" selection-start-line="204" selection-start-column="0" selection-end-line="204" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -92,7 +96,8 @@
       <file leaf-file-name="ServerPhone.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/xstd/phoneparse/ServerPhone.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="94" column="0" selection-start="2757" selection-end="2757" vertical-scroll-proportion="0.0" vertical-offset="1504" max-vertical-offset="1984">
+            <state vertical-scroll-proportion="0.0" vertical-offset="1504" max-vertical-offset="1984">
+              <caret line="94" column="0" selection-start-line="94" selection-start-column="0" selection-end-line="94" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -101,7 +106,8 @@
       <file leaf-file-name="Mail.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/xstd/mail/Mail.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="13" selection-start="365" selection-end="365" vertical-scroll-proportion="0.0" vertical-offset="976" max-vertical-offset="3088">
+            <state vertical-scroll-proportion="0.0" vertical-offset="224" max-vertical-offset="3488">
+              <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -110,7 +116,8 @@
       <file leaf-file-name="SmtpAuth.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/xstd/mail/SmtpAuth.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="61" selection-start="426" selection-end="434" vertical-scroll-proportion="0.0" vertical-offset="240" max-vertical-offset="368">
+            <state vertical-scroll-proportion="0.0" vertical-offset="240" max-vertical-offset="368">
+              <caret line="15" column="61" selection-start-line="15" selection-start-column="61" selection-end-line="15" selection-end-column="61" />
               <folding />
             </state>
           </provider>
@@ -119,7 +126,8 @@
       <file leaf-file-name="PhoneDumpMain.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/xstd/phoneparse/PhoneDumpMain.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="75" column="0" selection-start="2489" selection-end="2489" vertical-scroll-proportion="0.0" vertical-offset="1200" max-vertical-offset="1552">
+            <state vertical-scroll-proportion="0.0" vertical-offset="1200" max-vertical-offset="1552">
+              <caret line="75" column="0" selection-start-line="75" selection-start-column="0" selection-end-line="75" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -128,10 +136,9 @@
       <file leaf-file-name="PhoneMap.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/xstd/phoneparse/PhoneMap.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="21" column="28" selection-start="454" selection-end="454" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1616">
-              <folding>
-                <element signature="e#845#870#0" expanded="true" />
-              </folding>
+            <state vertical-scroll-proportion="0.0" vertical-offset="336" max-vertical-offset="1680">
+              <caret line="21" column="28" selection-start-line="21" selection-start-column="28" selection-end-line="21" selection-end-column="28" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -139,7 +146,8 @@
       <file leaf-file-name="PieChartUtils.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/xstd/chart/PieChartUtils.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="134" column="14" selection-start="4658" selection-end="4658" vertical-scroll-proportion="0.0" vertical-offset="2144" max-vertical-offset="2880">
+            <state vertical-scroll-proportion="0.0" vertical-offset="2144" max-vertical-offset="2880">
+              <caret line="134" column="14" selection-start-line="134" selection-start-column="14" selection-end-line="134" selection-end-column="14" />
               <folding />
             </state>
           </provider>
@@ -148,7 +156,8 @@
       <file leaf-file-name="Utils.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/xstd/phoneparse/Utils.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="41" column="47" selection-start="1217" selection-end="1217" vertical-scroll-proportion="0.41857335" vertical-offset="265" max-vertical-offset="1920">
+            <state vertical-scroll-proportion="0.50214595" vertical-offset="1254" max-vertical-offset="2032">
+              <caret line="98" column="9" selection-start-line="98" selection-start-column="9" selection-end-line="98" selection-end-column="9" />
               <folding />
             </state>
           </provider>
@@ -157,7 +166,8 @@
       <file leaf-file-name="Font.class" pinned="false" current="false" current-in-tab="false">
         <entry file="jar:///System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/classes.jar!/java/awt/Font.class">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="60" column="11" selection-start="2492" selection-end="2492" vertical-scroll-proportion="0.0" vertical-offset="960" max-vertical-offset="3472">
+            <state vertical-scroll-proportion="0.0" vertical-offset="960" max-vertical-offset="3472">
+              <caret line="60" column="11" selection-start-line="60" selection-start-column="11" selection-end-line="60" selection-end-column="11" />
               <folding />
             </state>
           </provider>
@@ -209,6 +219,9 @@
             <id>CSS</id>
           </State>
           <State>
+            <id>Plugin DevKit</id>
+          </State>
+          <State>
             <id>Probable bugs</id>
           </State>
           <State>
@@ -243,7 +256,7 @@
     <option name="STATE" value="0" />
   </component>
   <component name="ProjectView">
-    <navigator currentView="ProjectPane" proportions="" version="1" splitterProportion="0.5">
+    <navigator currentView="ProjectPane" proportions="" version="1">
       <flattenPackages />
       <showMembers />
       <showModules />
@@ -255,7 +268,7 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -364,7 +377,7 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -374,7 +387,7 @@
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="recentsLimit" value="5" />
     <property name="MemberChooser.sorted" value="false" />
-    <property name="options.lastSelected" value="editor.preferences.appearance" />
+    <property name="options.lastSelected" value="appearance" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
@@ -396,7 +409,7 @@
     </key>
   </component>
   <component name="RunManager" selected="Application.main">
-    <configuration default="true" type="GrailsRunConfigurationType" factoryName="Grails" singleton="true">
+    <configuration default="true" type="GrailsRunConfigurationType" factoryName="Grails">
       <module name="" />
       <setting name="vmparams" value="" />
       <setting name="cmdLine" value="run-app" />
@@ -406,7 +419,7 @@
       <setting name="launchBrowser" value="false" />
       <method />
     </configuration>
-    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin" singleton="true">
+    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
       <module name="" />
       <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m" />
       <option name="PROGRAM_PARAMETERS" />
@@ -430,6 +443,7 @@
       <option name="NETWORK_LATENCY" value="none" />
       <option name="CLEAR_LOGCAT" value="false" />
       <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
+      <option name="FILTER_LOGCAT_AUTOMATICALLY" value="true" />
       <method />
     </configuration>
     <configuration default="true" type="Remote" factoryName="Remote">
@@ -553,13 +567,14 @@
       <option name="NETWORK_LATENCY" value="none" />
       <option name="CLEAR_LOGCAT" value="false" />
       <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
+      <option name="FILTER_LOGCAT_AUTOMATICALLY" value="true" />
       <method />
     </configuration>
     <configuration default="false" name="main" type="Application" factoryName="Application">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <option name="MAIN_CLASS_NAME" value="com.xstd.phoneparse.Main" />
       <option name="VM_PARAMETERS" value="" />
-      <option name="PROGRAM_PARAMETERS" value="-m $USER_HOME$/百度云同步盘/xstd_app/sp_log/phone_city_map.txt -f $USER_HOME$/百度云同步盘/xstd_app/sp_log/sp_logs/canal.log.2014-02-11 -o $USER_HOME$/Desktop/phone_no_local.txt --mail --log $USER_HOME$/Desktop/data" />
+      <option name="PROGRAM_PARAMETERS" value="-m $USER_HOME$/百度云同步盘/xstd_app/sp_log/phone_city_map.txt -f $USER_HOME$/百度云同步盘/xstd_app/sp_log/sp_logs/canal.log.2014-04-01 -o $USER_HOME$/Desktop/phone_no_local.txt --mail --log $USER_HOME$/Desktop/data" />
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" value="" />
@@ -637,16 +652,40 @@
       <workItem from="1392025442736" duration="1235000" />
       <workItem from="1392087680228" duration="4416000" />
       <workItem from="1392163775678" duration="109000" />
-      <workItem from="1392174699162" duration="282000" />
+      <workItem from="1392174699162" duration="781000" />
+      <workItem from="1392338150026" duration="294000" />
+      <workItem from="1392679720578" duration="692000" />
+      <workItem from="1392861949787" duration="299000" />
+      <workItem from="1392947219463" duration="489000" />
+      <workItem from="1393284081329" duration="283000" />
+      <workItem from="1393371512471" duration="78000" />
+      <workItem from="1393718565289" duration="82000" />
+      <workItem from="1393742621094" duration="129000" />
+      <workItem from="1393889455169" duration="56000" />
+      <workItem from="1393901450285" duration="267000" />
+      <workItem from="1394096669708" duration="114000" />
+      <workItem from="1394593009550" duration="243000" />
+      <workItem from="1394678008723" duration="159000" />
+      <workItem from="1394751685305" duration="160000" />
+      <workItem from="1394863536909" duration="397000" />
+      <workItem from="1394933810103" duration="397000" />
+      <workItem from="1395094502521" duration="254000" />
+      <workItem from="1395273463695" duration="420000" />
+      <workItem from="1395359629254" duration="163000" />
+      <workItem from="1395549943051" duration="158000" />
+      <workItem from="1395619674419" duration="89000" />
+      <workItem from="1395705357377" duration="82000" />
+      <workItem from="1396227277375" duration="134000" />
+      <workItem from="1396405841725" duration="83000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="36514000" />
+    <option name="totallyTimeSpent" value="42535000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="47" y="22" width="1393" height="878" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -661,23 +700,26 @@
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32780612" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24166049" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.76756066" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19570053" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.36909324" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32950193" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32780612" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
     <option name="RECENTLY_FILTERED_USER_GROUPS">
+      <collection />
+    </option>
+    <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
       <collection />
     </option>
   </component>
@@ -699,305 +741,381 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/com/xstd/chart/BarChartUtils.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="4" selection-start="182" selection-end="182" vertical-scroll-proportion="0.0" vertical-offset="16" max-vertical-offset="2608" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="16" max-vertical-offset="2608">
+          <caret line="6" column="4" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/xstd/phoneparse/ServerPhone.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="89" column="55" selection-start="2476" selection-end="2476" vertical-scroll-proportion="0.0" vertical-offset="1424" max-vertical-offset="1888">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1424" max-vertical-offset="1888">
+          <caret line="89" column="55" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/xstd/phoneparse/PhoneDumpMain.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="75" column="0" selection-start="2489" selection-end="2489" vertical-scroll-proportion="0.0" vertical-offset="1200" max-vertical-offset="1552">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1200" max-vertical-offset="1552">
+          <caret line="75" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/xstd/chart/PieChartUtils.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="134" column="14" selection-start="4658" selection-end="4658" vertical-scroll-proportion="0.0" vertical-offset="2144" max-vertical-offset="2880">
+        <state vertical-scroll-proportion="0.0" vertical-offset="2144" max-vertical-offset="2880">
+          <caret line="134" column="14" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/xstd/phoneparse/Utils.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="77" column="28" selection-start="2794" selection-end="2800" vertical-scroll-proportion="0.0" vertical-offset="1232" max-vertical-offset="1552">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1232" max-vertical-offset="1552">
+          <caret line="77" column="28" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="jar:///System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/classes.jar!/java/awt/Font.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="60" column="11" selection-start="2492" selection-end="2492" vertical-scroll-proportion="0.0" vertical-offset="960" max-vertical-offset="3472">
+        <state vertical-scroll-proportion="0.0" vertical-offset="960" max-vertical-offset="3472">
+          <caret line="60" column="11" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/xstd/phoneparse/ServerPhone.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="30" selection-start="386" selection-end="386" vertical-scroll-proportion="0.0" vertical-offset="272" max-vertical-offset="1904">
+        <state vertical-scroll-proportion="0.0" vertical-offset="272" max-vertical-offset="1904">
+          <caret line="17" column="30" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/xstd/phoneparse/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="219" column="78" selection-start="7967" selection-end="7967" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="7632">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="7632">
+          <caret line="219" column="78" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/xstd/phoneparse/PropertyFileAyalysis.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="42" column="47" selection-start="1235" selection-end="1235" vertical-scroll-proportion="0.0" vertical-offset="64" max-vertical-offset="1264" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="64" max-vertical-offset="1264">
+          <caret line="42" column="47" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
       </provider>
     </entry>
     <entry file="jar:///System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/classes.jar!/java/util/Properties.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="68" selection-start="201" selection-end="207" vertical-scroll-proportion="0.0" vertical-offset="96" max-vertical-offset="1376" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="96" max-vertical-offset="1376">
+          <caret line="6" column="68" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/xstd/phoneparse/PhoneDumpMain.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="79" column="12" selection-start="2587" selection-end="2819" vertical-scroll-proportion="0.0" vertical-offset="1264" max-vertical-offset="1552" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="1264" max-vertical-offset="1552">
+          <caret line="79" column="12" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/xstd/phoneparse/PhoneMap.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="40" selection-start="625" selection-end="654" vertical-scroll-proportion="0.0" vertical-offset="464" max-vertical-offset="1248" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="464" max-vertical-offset="1248">
+          <caret line="29" column="40" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/xstd/phoneparse/ServerPhone.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="30" selection-start="386" selection-end="386" vertical-scroll-proportion="0.0" vertical-offset="272" max-vertical-offset="1904">
+        <state vertical-scroll-proportion="0.0" vertical-offset="272" max-vertical-offset="1904">
+          <caret line="17" column="30" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/xstd/phoneparse/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="139" column="32" selection-start="4988" selection-end="4988" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="7040">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="7040">
+          <caret line="139" column="32" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/xstd/phoneparse/PhoneDumpMain.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="32" selection-start="352" selection-end="352" vertical-scroll-proportion="0.0" vertical-offset="128" max-vertical-offset="1552" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="128" max-vertical-offset="1552">
+          <caret line="16" column="32" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/xstd/phoneparse/PhoneMap.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="55" column="64" selection-start="1328" selection-end="1328" vertical-scroll-proportion="0.0" vertical-offset="493" max-vertical-offset="1248" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="493" max-vertical-offset="1248">
+          <caret line="55" column="64" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/xstd/phoneparse/ServerPhone.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="48" column="0" selection-start="1200" selection-end="1200" vertical-scroll-proportion="0.0" vertical-offset="768" max-vertical-offset="1648">
+        <state vertical-scroll-proportion="0.0" vertical-offset="768" max-vertical-offset="1648">
+          <caret line="48" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/xstd/phoneparse/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="139" column="32" selection-start="4988" selection-end="4988" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="7040">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="7040">
+          <caret line="139" column="32" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/xstd/phoneparse/PhoneDumpMain.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="32" selection-start="352" selection-end="352" vertical-scroll-proportion="0.0" vertical-offset="128" max-vertical-offset="1552" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="128" max-vertical-offset="1552">
+          <caret line="16" column="32" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/xstd/phoneparse/PhoneMap.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="55" column="64" selection-start="1328" selection-end="1328" vertical-scroll-proportion="0.0" vertical-offset="493" max-vertical-offset="1248" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="493" max-vertical-offset="1248">
+          <caret line="55" column="64" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/xstd/phoneparse/ServerPhone.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="48" column="0" selection-start="1200" selection-end="1200" vertical-scroll-proportion="0.0" vertical-offset="768" max-vertical-offset="1648">
+        <state vertical-scroll-proportion="0.0" vertical-offset="768" max-vertical-offset="1648">
+          <caret line="48" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/xstd/phoneparse/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="139" column="32" selection-start="4988" selection-end="4988" vertical-scroll-proportion="0.0" vertical-offset="2074" max-vertical-offset="7040">
+        <state vertical-scroll-proportion="0.0" vertical-offset="2074" max-vertical-offset="7040">
+          <caret line="139" column="32" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/xstd/phoneparse/PhoneDumpMain.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="32" selection-start="352" selection-end="352" vertical-scroll-proportion="0.0" vertical-offset="128" max-vertical-offset="1552" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="128" max-vertical-offset="1552">
+          <caret line="16" column="32" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/xstd/phoneparse/PhoneMap.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="55" column="64" selection-start="1328" selection-end="1328" vertical-scroll-proportion="0.0" vertical-offset="493" max-vertical-offset="1248" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="493" max-vertical-offset="1248">
+          <caret line="55" column="64" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/xstd/phoneparse/ServerPhone.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="93" column="13" selection-start="2682" selection-end="2682" vertical-scroll-proportion="0.0" vertical-offset="941" max-vertical-offset="1728">
+        <state vertical-scroll-proportion="0.0" vertical-offset="941" max-vertical-offset="1728">
+          <caret line="93" column="13" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="jar:///System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/classes.jar!/java/util/Hashtable.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="44" column="26" selection-start="1792" selection-end="1792" vertical-scroll-proportion="0.3328841" vertical-offset="441" max-vertical-offset="3024" />
+        <state vertical-scroll-proportion="0.3328841" vertical-offset="441" max-vertical-offset="3024">
+          <caret line="44" column="26" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
       </provider>
     </entry>
     <entry file="jar:///System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/classes.jar!/java/util/Properties.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="68" selection-start="201" selection-end="207" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1360" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1360">
+          <caret line="6" column="68" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/xstd/phoneparse/PropertyFileAyalysis.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="58" column="25" selection-start="1636" selection-end="1636" vertical-scroll-proportion="0.0" vertical-offset="461" max-vertical-offset="1216" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="461" max-vertical-offset="1216">
+          <caret line="58" column="25" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
       </provider>
     </entry>
     <entry file="jar://$PROJECT_DIR$/lib/jcommon-1.0.21.jar!/org/jfree/util/SortOrder.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="59" selection-start="388" selection-end="398" vertical-scroll-proportion="0.0" vertical-offset="144" max-vertical-offset="432" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="144" max-vertical-offset="432">
+          <caret line="9" column="59" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/spPhoneParse.iml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="19" selection-start="890" selection-end="890" vertical-scroll-proportion="-14.153846" vertical-offset="0" max-vertical-offset="1872" />
+        <state vertical-scroll-proportion="-14.153846" vertical-offset="0" max-vertical-offset="1872">
+          <caret line="23" column="19" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="81" column="16" selection-start="4041" selection-end="4041" vertical-scroll-proportion="0.2587601" vertical-offset="1104" max-vertical-offset="17520" />
+        <state vertical-scroll-proportion="0.2587601" vertical-offset="1104" max-vertical-offset="17520">
+          <caret line="81" column="16" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/.idea/vcs.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="0" selection-start="169" selection-end="169" vertical-scroll-proportion="0.14834437" vertical-offset="0" max-vertical-offset="755" />
+        <state vertical-scroll-proportion="0.14834437" vertical-offset="0" max-vertical-offset="755">
+          <caret line="7" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/.idea/modules.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="755" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="755">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/.idea/misc.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="742" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="742">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/.idea/encodings.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="43" selection-start="90" selection-end="104" vertical-scroll-proportion="0.042384107" vertical-offset="0" max-vertical-offset="755" />
+        <state vertical-scroll-proportion="0.042384107" vertical-offset="0" max-vertical-offset="755">
+          <caret line="2" column="43" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/.idea/compiler.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="755" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="755">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/.idea/artifacts/spPhoneParse_jar.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="32" selection-start="258" selection-end="264" vertical-scroll-proportion="0.08476821" vertical-offset="0" max-vertical-offset="755" />
+        <state vertical-scroll-proportion="0.08476821" vertical-offset="0" max-vertical-offset="755">
+          <caret line="4" column="32" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/META-INF/MANIFEST.MF">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="755" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="755">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="755" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="755">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="755" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="755">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
       </provider>
     </entry>
     <entry file="jar:///System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/classes.jar!/java/awt/Font.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="60" column="11" selection-start="2492" selection-end="2492" vertical-scroll-proportion="0.0" vertical-offset="697" max-vertical-offset="3456">
+        <state vertical-scroll-proportion="0.0" vertical-offset="960" max-vertical-offset="3472">
+          <caret line="60" column="11" selection-start-line="60" selection-start-column="11" selection-end-line="60" selection-end-column="11" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/xstd/chart/PieChartUtils.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="134" column="14" selection-start="4658" selection-end="4658" vertical-scroll-proportion="0.0" vertical-offset="1846" max-vertical-offset="2624">
+        <state vertical-scroll-proportion="0.0" vertical-offset="2144" max-vertical-offset="2880">
+          <caret line="134" column="14" selection-start-line="134" selection-start-column="14" selection-end-line="134" selection-end-column="14" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/xstd/chart/BarChartUtils.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="4" selection-start="182" selection-end="182" vertical-scroll-proportion="0.0" vertical-offset="16" max-vertical-offset="2608" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="16" max-vertical-offset="2608">
+          <caret line="6" column="4" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
       </provider>
     </entry>
     <entry file="jar:///System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/classes.jar!/java/lang/String.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="204" column="0" selection-start="7977" selection-end="7977" vertical-scroll-proportion="0.0" vertical-offset="3110" max-vertical-offset="3344">
+        <state vertical-scroll-proportion="0.0" vertical-offset="3264" max-vertical-offset="3360">
+          <caret line="204" column="0" selection-start-line="204" selection-start-column="0" selection-end-line="204" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/xstd/mail/SmtpAuth.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="61" selection-start="426" selection-end="434" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="368">
+        <state vertical-scroll-proportion="0.0" vertical-offset="240" max-vertical-offset="368">
+          <caret line="15" column="61" selection-start-line="15" selection-start-column="61" selection-end-line="15" selection-end-column="61" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/xstd/phoneparse/ServerPhone.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="94" column="0" selection-start="2757" selection-end="2757" vertical-scroll-proportion="0.0" vertical-offset="1132" max-vertical-offset="1888">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1504" max-vertical-offset="1984">
+          <caret line="94" column="0" selection-start-line="94" selection-start-column="0" selection-end-line="94" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/xstd/phoneparse/PhoneDumpMain.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="75" column="0" selection-start="2489" selection-end="2489" vertical-scroll-proportion="0.0" vertical-offset="720" max-vertical-offset="1488">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1200" max-vertical-offset="1552">
+          <caret line="75" column="0" selection-start-line="75" selection-start-column="0" selection-end-line="75" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/xstd/phoneparse/PhoneMap.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="28" selection-start="454" selection-end="454" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1616">
-          <folding>
-            <element signature="e#845#870#0" expanded="true" />
-          </folding>
+        <state vertical-scroll-proportion="0.0" vertical-offset="336" max-vertical-offset="1680">
+          <caret line="21" column="28" selection-start-line="21" selection-start-column="28" selection-end-line="21" selection-end-column="28" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/xstd/mail/Mail.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="13" selection-start="365" selection-end="365" vertical-scroll-proportion="0.0" vertical-offset="976" max-vertical-offset="3488">
+        <state vertical-scroll-proportion="0.0" vertical-offset="224" max-vertical-offset="3488">
+          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/xstd/phoneparse/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="504" column="29" selection-start="23839" selection-end="23839" vertical-scroll-proportion="0.0" vertical-offset="7465" max-vertical-offset="8208">
+        <state vertical-scroll-proportion="0.0" vertical-offset="8064" max-vertical-offset="8272">
+          <caret line="504" column="29" selection-start-line="504" selection-start-column="29" selection-end-line="504" selection-end-column="29" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/xstd/phoneparse/Utils.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="41" column="47" selection-start="1217" selection-end="1217" vertical-scroll-proportion="0.41857335" vertical-offset="265" max-vertical-offset="1920">
+        <state vertical-scroll-proportion="0.50214595" vertical-offset="1254" max-vertical-offset="2032">
+          <caret line="98" column="9" selection-start-line="98" selection-start-column="9" selection-end-line="98" selection-end-column="9" />
           <folding />
         </state>
       </provider>

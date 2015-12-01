@@ -41,7 +41,14 @@ public class Utils {
         toList.add("duheng1225@163.com");
         toList.add("michael.s.china@gmail.com");
 
-        Mail mail = new Mail();
+        Mail mail = new Mail("smtp.gmail.com",
+                                "michael.s.china@gmail.com",
+                                "孙国晴",
+                                "michael.s.china@gmail.com",
+                                "Sgq811130",
+                                toList,
+                                time + "数据",
+                                time + "数据");
         for (String filename : filenameList) {
             mail.addAttachfile(attachPath + "/" + filename);
         }
